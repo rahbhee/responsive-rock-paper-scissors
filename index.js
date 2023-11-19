@@ -6,7 +6,7 @@ const handSigns = document.querySelectorAll('.hand-signs');
 const rules = document.querySelector('.rules');
 const rulesBtn = document.getElementById('rules');
 const closeRulesBtn = document.querySelector('.close-rules');
-const scissorsSign = document.getElementById('scissors');
+const scissorsSign = document.querySelector('#scissors');
 const paperSign = document.getElementById('paper');
 const rockSign = document.getElementById('rock')
 const handSignsDiv = document.querySelector('.hand-signs-div');
@@ -15,6 +15,14 @@ const test = document.querySelector('.header');
 const decision = document.querySelector('.decisions');
 const computerGame = document.getElementById('computer-game');
 const scws = document.getElementById('scws');
+
+// 
+
+const playerScissors = document.querySelector('.players-choice-scissors');
+const playerPaper = document.querySelector('.players-choice-paper');
+const playerRock = document.querySelector('.players-choice-rock');
+const botShadow = document.querySelector('.bot-shadow')
+
 const delayMilliseconds = 3000;
 const computerScissors = document.querySelector('.computer-scissors');
 const computerPaper = document.querySelector('.computer-paper');
@@ -95,33 +103,43 @@ let scissorsResult = () => {
     })
    
     if(result === 1){
-        scissorsSign.classList.remove('remove-hand-signs')
-        scissorsSign.classList.add('scissors-won')
-        setTimeout(computerGamePlay, delayMilliseconds)
+
+        playerScissors.classList.add('players-scissors-won')
+        botShadow.classList.add('bot-shadow-transform')
+
+        /*setTimeout(computerGamePlay, delayMilliseconds)
         computerGame.removeChild(computerPaper)
         computerGame.removeChild(computerRock)
         computerGame.style.border = '15px solid hsl(40, 84%, 53%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%)'
         outcomeHeader.innerText='DRAW'
-        console.log('draw'); 
+        console.log('draw'); */
     }else if(result === 0){
-        scissorsSign.classList.remove('remove-hand-signs')
+
+        playerScissors.classList.add('players-scissors-won')
+        botShadow.classList.add('bot-shadow-transform')
+
+        /*scissorsSign.classList.remove('remove-hand-signs')
         scissorsSign.classList.add('scissors-won')
         setTimeout(computerGamePlay, delayMilliseconds)
         computerGame.style.border = '15px solid hsl(230, 89%, 65%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%)'
         computerGame.removeChild(computerScissors)
         computerGame.removeChild(computerRock)
-        console.log('win')
+        console.log('win')*/
     }else{
-       scissorsSign.classList.remove('remove-hand-signs')
+
+        playerScissors.classList.add('players-scissors-won')
+        botShadow.classList.add('bot-shadow-transform')
+
+       /*scissorsSign.classList.remove('remove-hand-signs')
         scissorsSign.classList.add('scissors-won')
         setTimeout(computerGamePlay, delayMilliseconds)
         computerGame.style.border = ' 15px solid hsl(349, 70%, 56%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%)'
         computerGame.removeChild(computerPaper)
         computerGame.removeChild(computerScissors)
-        outcomeHeader.innerText='YOU LOST'
+        outcomeHeader.innerText='YOU LOST'*/
         console.log('lost')
     }
     decision.classList.add('decisions-visible');
@@ -141,33 +159,38 @@ let paperResult = () => {
     })
    
     if(result === 1){
-        paperSign.classList.remove('remove-hand-signs');
-        paperSign.classList.add('paper-won');
+        playerPaper.classList.add('players-paper-won')
+        botShadow.classList.add('bot-shadow-transform')
+       /* paperSign.classList.add('paper-won');
         setTimeout(computerGamePlay, delayMilliseconds);
         computerGame.removeChild(computerScissors);
         computerGame.removeChild(computerRock);
         computerGame.style.border = '15px solid hsl(230, 89%, 65%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%)'
-        outcomeHeader.innerText='DRAW'
+        outcomeHeader.innerText='DRAW'*/
         console.log('draw');
     }else if(result === 0){
-        paperSign.classList.remove('remove-hand-signs');
+        playerPaper.classList.add('players-paper-won')
+        botShadow.classList.add('bot-shadow-transform')
+        /*paperSign.classList.remove('remove-hand-signs');
         paperSign.classList.add('paper-won');
         setTimeout(computerGamePlay, delayMilliseconds);
         computerGame.style.border = '15px solid hsl(349, 70%, 56%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%)'
         computerGame.removeChild(computerPaper);
-        computerGame.removeChild(computerScissors);
+        computerGame.removeChild(computerScissors);*/
         console.log('win');
     }else{
-        paperSign.classList.remove('remove-hand-signs')
+        playerPaper.classList.add('players-paper-won')
+        botShadow.classList.add('bot-shadow-transform')
+       /* paperSign.classList.remove('remove-hand-signs')
         paperSign.classList.add('paper-won')
         setTimeout(computerGamePlay, delayMilliseconds)
         computerGame.style.border = '15px solid hsl(40, 84%, 53%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%)'
         computerGame.removeChild(computerPaper);
         computerGame.removeChild(computerRock);
-        outcomeHeader.innerText='YOU LOST'
+        outcomeHeader.innerText='YOU LOST'*/
         console.log('lost');
     }
     decision.classList.add('decisions-visible');
@@ -184,33 +207,36 @@ let rockResult = () => {
     })
    
     if(result === 1){
-        rockSign.classList.remove('remove-hand-signs');
-        rockSign.classList.add('rock-won');
+        playerRock.classList.add('players-rock-won')
+        botShadow.classList.add('bot-shadow-transform')
+        /*rockSign.classList.add('rock-won');
         setTimeout(computerGamePlay, delayMilliseconds);
         computerGame.removeChild(computerScissors);
         computerGame.removeChild(computerPaper);
         computerGame.style.border = '15px solid hsl(349, 70%, 56%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%)'
-        outcomeHeader.innerText='DRAW'
+        outcomeHeader.innerText='DRAW'*/
         console.log('draw');
     }else if(result === 0){
-        rockSign.classList.remove('remove-hand-signs');
-        rockSign.classList.add('rock-won');
+        playerRock.classList.add('players-rock-won')
+        botShadow.classList.add('bot-shadow-transform')
+       /* rockSign.classList.add('rock-won');
         setTimeout(computerGamePlay, delayMilliseconds);
         computerGame.style.border = '15px solid hsl(40, 84%, 53%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%)'
         computerGame.removeChild(computerPaper);
-        computerGame.removeChild(computerRock);
+        computerGame.removeChild(computerRock);*/
         console.log('win');
     }else{
-        rockSign.classList.remove('remove-hand-signs')
-        rockSign.classList.add('rock-won')
+        playerRock.classList.add('players-rock-won')
+        botShadow.classList.add('bot-shadow-transform')
+        /*rockSign.classList.add('rock-won')
         setTimeout(computerGamePlay, delayMilliseconds)
         computerGame.style.border = '15px solid hsl(230, 89%, 65%)';
         computerGame.style.boxShadow = 'inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%)'
         computerGame.removeChild(computerScissors);
         computerGame.removeChild(computerRock);
-        outcomeHeader.innerText='YOU LOST'
+        outcomeHeader.innerText='YOU LOST'*/
         console.log('lost');
     }
     decision.classList.add('decisions-visible');
@@ -223,9 +249,10 @@ rockSign.addEventListener('click', rockResult)
 
 
 const reset = () => {
-    rockResult = null;
-    paperResult = null;
-    scissorsResult = null;
+    scissorsSign.style.display = 'none';
+    rockSign.style.display = 'none';
+    paperSign.style.display = 'none';
+    
     /*scissorsSign.classList.remove('remove-hand-signs');
     paperSign.classList.remove('remove-hand-signs');
     rockSign.classList.remove('remove-hand-signs');
