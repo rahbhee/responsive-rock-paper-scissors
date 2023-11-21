@@ -10,7 +10,7 @@ const scissorsSign = document.querySelector('#scissors');
 const paperSign = document.getElementById('paper');
 const rockSign = document.getElementById('rock')
 const handSignsDiv = document.querySelector('.hand-signs-div');
-const items = handSignsDiv.querySelectorAll('.rhs');
+const items = document.querySelectorAll('.rhs');
 const test = document.querySelector('.header');
 const decision = document.querySelector('.decisions');
 const computerGame = document.getElementById('computer-game');
@@ -106,7 +106,10 @@ function outcome(){
 
 let scissorsResult = () => {
     
-     items.style.display = 'none'
+        triangleImg.classList.add('remove-hand-signs')
+        scissorsSign.classList.add('remove-hand-signs')
+        paperSign.classList.add('remove-hand-signs')
+        rockSign.classList.add('remove-hand-signs')
 
    
     if(result === 1){
@@ -139,9 +142,11 @@ scissorsSign.addEventListener('click', scissorsResult)
 
 let paperResult = () => {
     
-        //items.style.display = 'none'
-    
-   
+    triangleImg.classList.add('remove-hand-signs')
+    scissorsSign.classList.add('remove-hand-signs')
+    paperSign.classList.add('remove-hand-signs')
+    rockSign.classList.add('remove-hand-signs')
+
     if(result === 1){
         playerPaper.classList.add('players-paper-won')
         botShadow.classList.add('bot-shadow-transform')
@@ -171,9 +176,11 @@ paperSign.addEventListener('click', paperResult)
 
 let rockResult = () => {
     
-        items.style.display = 'none'
-    
-   
+    triangleImg.classList.add('remove-hand-signs')
+    scissorsSign.classList.add('remove-hand-signs')
+    paperSign.classList.add('remove-hand-signs')
+    rockSign.classList.add('remove-hand-signs')
+
     if(result === 1){
         playerRock.classList.add('players-rock-won')
         botShadow.classList.add('bot-shadow-transform')
@@ -201,16 +208,24 @@ let rockResult = () => {
 }
 rockSign.addEventListener('click', rockResult)
 
-const reset = () => {
-    items.style.display = 'block'
-   gameOutcome.style.display = 'none'
-   playerPaper.style.display = 'none'
-   playerRock.style.display = 'none'
-   playerScissors.style.display= 'none'
+let reset = () => {
+    
+    
+   gameOutcome.classList.add('remove-hand-signs')
+   playerPaper.classList.add('remove-hand-signs')
+   playerRock.classList.add('remove-hand-signs')
+   playerScissors.classList.add('remove-hand-signs')
    botPaper.style.display = 'none'
    botRock.style.display = 'none'
    botScissors.style.display = 'none'
    botShadow.style.display ='none'
+   triangleImg.classList.remove('remove-hand-signs')
+   scissorsSign.classList.remove('remove-hand-signs')
+   paperSign.classList.remove('remove-hand-signs')
+   rockSign.classList.remove('remove-hand-signs')
+
+   
+   
    console.log('hey')
 }
 playAgain.addEventListener('click', reset);
