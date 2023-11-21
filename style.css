@@ -8,6 +8,7 @@ body{
     justify-content: center;
     color: #fff;
     background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    overflow: none;
 }
 .header{
     display: flex;
@@ -103,7 +104,7 @@ body{
 #rules{
     position: absolute;
     margin-left: 40rem;
-    margin-top: 8rem;
+    margin-top: 5rem;
     font-size: .7rem;
     z-index: 3;
     letter-spacing: .2rem;
@@ -122,12 +123,11 @@ body{
     width: 30rem;
     z-index: 1;
     margin-left: 2.5rem;
-    margin-top: 4rem;
+    margin-bottom: -25rem;
     background-color: #fff;
     color: black;
     transform: scale(0.1);
     visibility: hidden;
-    position: absolute;
     border-radius: 1rem;
 }
 .rules div{
@@ -153,6 +153,7 @@ body{
     transition: transform 0.3s ease-in-out;
     visibility: visible;
     z-index: 1;
+    margin-top: 2rem;
     position: relative;
 }
 
@@ -163,7 +164,6 @@ body{
 
 }
 .players-choice-rock{
-   
     border: 15px solid hsl(349, 70%, 56%);
     box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
     border-radius: 50%;
@@ -214,34 +214,31 @@ body{
     cursor: pointer;
 }
 .players-scissors-won{
-    transition: transform 0.5s;
+    transition: transform 2s;
     transform: translate(-300px, 30px) scale(1.2);
     display: grid;
 }
 .players-paper{
     margin-left: 7rem;
     border-radius: 50%;
-    padding: 2rem;
+    padding: 2.3rem;
     height: 3rem;
     cursor: pointer;
 }
 .players-paper-won{
-    transition: transform 0.5s;
+    transition: transform 2s;
     transform: translate(-80px, 30px) scale(1.2);
     display: grid;
 }
 .players-rock{
     margin-left: 7rem;
     border-radius: 50%;
-    padding: 2rem;
+    padding: 2.3rem;
     height: 3rem;
     cursor: pointer;
-    transition: transform 0.5s;
-    transform: translate(-200px, -130px) scale(1.2);
-    position: relative;
 }
 .players-rock-won{
-    transition: transform 0.5s;
+    transition: transform 2s;
     transform: translate(-200px, -130px) scale(1.2);
     display: grid;
 }
@@ -252,75 +249,91 @@ body{
 /*bot shadow*/
 
 #bot-shadow{
-    margin-top: -4.6rem;
+    margin-top: -3.9rem;
     border-radius: 50%;
     margin-left: 29rem;
     z-index: -3;
-    padding: .9rem;
+    padding: .0rem;
     width: 1.8rem;
     height: 1.7rem;
     position: absolute;
     background-color: rgba(24,35,65,255);
-    visibility: none;
 }
 .bot-shadow-transform{
     transition: transform 2.5s;
-    transform: scale(2.8);
+    transform: scale(5.5);
     visibility: visible;
 }
 
 /*bot-choice*/
 
 .bot-choice{
-    background-color: #fff;
-    
-}
-.bot-choice-scissors{
-    border: 15px solid hsl(40, 84%, 53%);
-    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
-    border-radius: 50%;
-    padding: 1.5rem;
-    height: 3rem;
-    cursor: pointer;
-    background-color:#fff;
-    
-    position: absolute;
-    margin-top: -7rem;
-    margin-left: 27rem;
-}
-.bot-choice-paper{
-    border: 15px solid hsl(230, 89%, 65%);
-    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
-    border-radius: 50%;
-    padding: 1.7rem;
-    height: 3rem;
-    cursor: pointer;
-    background-color:#fff;
-    
-    position: absolute;
-    margin-top: -7rem;
-    margin-left: 26.85rem;
-}
-.bot-choice-rock{
-    border: 15px solid hsl(349, 70%, 56%);
-    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
-    border-radius: 50%;
-    padding: 1.7rem;
-    height: 3rem;
-    cursor: pointer;
-    background-color:#fff;
-    position: absolute;
-    margin-top: -7rem;
-    margin-left: 26.7rem;
-}
-/*
-.game-outcome{
-    position: absolute;
-    left: 540px;
-    bottom: 150px;
-    text-align: center;
     visibility: hidden;
 }
+.bot-img{
+    width: 3.6rem;
+}
+.bot-choice-scissors{
+    border: 18px solid hsl(40, 84%, 53%);
+    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
+    border-radius: 50%;
+    padding: 1.9rem;
+    height: 3.3rem;
+    cursor: pointer;
+    background-color:#fff;
+    position: absolute;
+    margin-top: -7.5rem;
+    margin-left: 25rem;
+}
+
+.bot-choice-paper{
+    border: 18px solid hsl(230, 89%, 65%);
+    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
+    border-radius: 50%;
+    padding: 2rem;
+    height: 3.3rem;
+    cursor: pointer;
+    background-color:#fff;
+    position: absolute;
+    margin-top: -7.9rem;
+    margin-left: 25.4rem;
+}
+.bot-choice-rock{
+    border: 18px solid hsl(349, 70%, 56%);
+    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
+    border-radius: 50%;
+    padding: 2rem;
+    height: 3.3rem;
+    cursor: pointer;
+    background-color:#fff;
+    position: absolute;
+    margin-top: -7.75rem;
+    margin-left: 25.35rem;
+}
+
+.game-outcome{
+    position: absolute;
+    left: 530px;
+    bottom: 150px;
+    text-align: center;
+    cursor: pointer;  
+}
+.game-outcome-remove{
+    visibility: hidden;
+}
+#outcomeh1{
+    cursor: pointer;
+}
+.game-outcome p{
+    font-size: .65rem;
+    color: rgba(0, 0, 0, 0.7);
+    padding: .4rem 2rem;
+    border-radius: .3rem;
+    margin-top: 1rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+/*
 .game-outcome-visible{
     visibility: visible;
 }
