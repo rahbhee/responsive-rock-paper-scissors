@@ -57,39 +57,45 @@ body{
     visibility: visible;
 }
 .hand-signs-div{
-    position: relative;
+   position: relative;
    display: flex;
 }
 #rock{
     margin-top: 13rem;
-    margin-left: 14rem;
+    margin-left: 13rem;
     position: absolute;
     border: 15px solid hsl(349, 70%, 56%);
     box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
     border-radius: 50%;
-    padding: 1.7rem;
+    padding: 2rem;
     height: 3rem;
     cursor: pointer;
+    display: flex;
 }
 #scissors{
     margin-top: 3rem;
-    margin-left: 7rem;
+    margin-left: 6rem;
     border: 15px solid hsl(40, 84%, 53%);
     box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
     border-radius: 50%;
-    padding: 1.5rem;
+    padding: 2rem;
     height: 3rem;
     cursor: pointer;
+    display: flex;
 }
 #paper{
   margin-top: 3rem;
-  margin-left: 6.5rem;
+  margin-left: 6rem;
   border: 15px solid hsl(230, 89%, 65%);
   box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
   border-radius: 50%;
-  padding: 1.7rem;
+  padding: 2rem;
   height: 3rem;
   cursor: pointer;
+  display: flex;
+}
+.scissors, .paper{
+    width: 3rem;
 }
 .hand-signs-div div{
     background-color: #fff;
@@ -161,7 +167,6 @@ body{
 
 .players-choice{
     background-color: #fff;
-
 }
 .players-choice-rock{
     border: 15px solid hsl(349, 70%, 56%);
@@ -188,7 +193,6 @@ body{
     position: absolute;
     margin-top: 3rem;
     margin-left: 21.8rem;
-
 }
 .players-choice-paper{
   border: 15px solid hsl(230, 89%, 65%);
@@ -207,40 +211,28 @@ body{
 /*players win*/
 
 .players-scissors{
-    margin-left: 7rem;
     border-radius: 50%;
-    padding: 2rem;
     height: 3rem;
     cursor: pointer;
-}
-.players-scissors-won{
-    transition: transform 2s;
+    transition: all, 2s, ease-in;
     transform: translate(-300px, 30px) scale(1.2);
-    display: grid;
+    display: block;
 }
 .players-paper{
-    margin-left: 7rem;
     border-radius: 50%;
-    padding: 2.3rem;
     height: 3rem;
     cursor: pointer;
-}
-.players-paper-won{
-    transition: transform 2s;
     transform: translate(-80px, 30px) scale(1.2);
-    display: grid;
+    transition: all, 2s, ease-in;
+    display: block;
 }
 .players-rock{
-    margin-left: 7rem;
     border-radius: 50%;
-    padding: 2.3rem;
     height: 3rem;
     cursor: pointer;
-}
-.players-rock-won{
-    transition: transform 2s;
     transform: translate(-200px, -130px) scale(1.2);
-    display: grid;
+    transition: all, 2s, ease-in;
+    display: block;
 }
 .remove-hand-signs{
     visibility: hidden;
@@ -282,10 +274,9 @@ body{
     cursor: pointer;
     background-color:#fff;
     position: absolute;
-    margin-top: -7.5rem;
+    margin-top: -8rem;
     margin-left: 25rem;
 }
-
 .bot-choice-paper{
     border: 18px solid hsl(230, 89%, 65%);
     box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
@@ -307,16 +298,15 @@ body{
     cursor: pointer;
     background-color:#fff;
     position: absolute;
-    margin-top: -7.75rem;
-    margin-left: 25.35rem;
+    margin-top: -8rem;
+    margin-left: 25rem;
 }
-
 .game-outcome{
     position: absolute;
-    left: 530px;
-    bottom: 150px;
+    left: 520px;
+    bottom: 120px;
     text-align: center;
-    cursor: pointer;  
+    cursor: pointer;
 }
 .game-outcome-remove{
     visibility: hidden;
@@ -324,7 +314,7 @@ body{
 #outcomeh1{
     cursor: pointer;
 }
-.game-outcome p{
+#play-again{
     font-size: .65rem;
     color: rgba(0, 0, 0, 0.7);
     padding: .4rem 2rem;
@@ -333,108 +323,8 @@ body{
     background-color: #fff;
     cursor: pointer;
 }
-/*
-.game-outcome-visible{
-    visibility: visible;
-}
-.game-outcome p{
-    font-size: .65rem;
-    color: rgba(0, 0, 0, 0.7);
-    padding: .4rem 2rem;
-    border-radius: .3rem;
-    margin-top: 1rem;
-    background-color: #fff;
-    cursor: pointer;
-}
-.game-outcome p:hover{
-    scale: 1.2;
-}
-/*transitions for scissors
 
 
-.remove-hand-signs{
-    visibility: hidden;
-}
-
-.players-scissors-won{
-    margin-left: 7rem;
-    border-radius: 50%;
-    padding: 2rem;
-    height: 3rem;
-    cursor: pointer;
-    transition: transform 0.5s;
-    transform: translate(-300px, 30px) scale(1.2);
-}
-.players-paper-won{
-    margin-left: 7rem;
-    border-radius: 50%;
-    padding: 2rem;
-    height: 3rem;
-    cursor: pointer;
-    transition: transform 0.5s;
-    transform: translate(-80px, 30px) scale(1.2);
-    z-index: -1;
-}
-.players-rock-won{
-    margin-left: 7rem;
-    border-radius: 50%;
-    padding: 2rem;
-    height: 3rem;
-    cursor: pointer;
-    transition: transform 0.5s;
-    transform: translate(-200px, -130px) scale(1.2);
-    z-index: -1;
-}
-.computer-game{
-    margin-top: 4.63rem;
-    margin-left: 27.7rem;
-    border-radius: 50%;
-    padding: 1.5rem;
-    height: 3rem;
-    cursor: pointer;
-    transition: transform 0.5s;
-    transform: translate(-5px, 0px) scale(1.2);
-    position: absolute;
-    visibility: visible;
-}
-.scissors-computer-won-shadow{
-    margin-top: 6.8rem;
-    border-radius: 50%;
-    margin-right: 1rem;
-    z-index: -3;
-    padding: .8rem;
-    width: 1.8rem;
-    height: 1.7rem;
-    transition: transform 2.5s;
-    transform: scale(2.8);
-    position: relative;
-}
-#scws{
-    background-color: rgba(23,34,62,255);
-}
-.computer-game-initial{
-    visibility: hidden;
-}
-.computer-sign-remove{
-    visibility: hidden;
-}
-.triangle-visible{
-    visibility: visible;
-}
-/*transitions for paper*/
-
-/*@media (min-width: px) and (max-width: 1024px){
-    p:last-child{
-    position: absolute;
-    margin-left: 42rem;
-    margin-top: 29rem;
-    font-size: .7rem;
-    letter-spacing: .2rem;;
-    padding: .5rem 1.5rem;
-    border: 1px solid #fff;
-    border-radius: .5rem;
-    }
-}*/
 @media (min-width: 360px) and (max-width: 1024px){
     .header{
         display: flex;
@@ -462,7 +352,7 @@ body{
     .score h1{
         font-size: 2rem;
     }
-    .game-outcome{
+   /* .game-outcome{
         position: absolute;
         left: 185px;
         bottom: 150px;
@@ -476,5 +366,5 @@ body{
         margin-top: 1rem;
         background-color: #fff;
         cursor: pointer;
-    }
+    }*/
 }
