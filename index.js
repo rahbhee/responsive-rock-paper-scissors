@@ -19,10 +19,11 @@ const playerScissors = document.querySelector('.players-choice-scissors');
 const playerPaper = document.querySelector('.players-choice-paper');
 const playerRock = document.querySelector('.players-choice-rock');
 //
-const botShadow = document.querySelector('.bot-shadow');
+const botShadow = document.querySelector('#bot-shadow');
 const botScissors = document.querySelector('.bot-choice-scissors');
 const botPaper = document.querySelector('.bot-choice-paper');
 const botRock = document.querySelector('.bot-choice-rock');
+const botChoice = document.querySelectorAll('.bot-choice')
 //
 const gameOutcome = document.querySelector('.game-outcome');
 const outcomeHeader = document.getElementById('outcomeh1');
@@ -41,21 +42,27 @@ closeRulesBtn.addEventListener('click', () => {
     rules.classList.remove('open-rules')
 });
 
-const randomSign = () => {
-    return Math.floor(Math.random()*3);
-}
-let result = randomSign();
 
+let result = randomSign();
 // bot game play 
 
+botScissors.style.display = 'none'
+botPaper.style.display = 'none'
+botRock.style.display = 'none'
+botShadow.style.display = 'none'
+
+playerPaper.style.display = 'none'
+playerRock.style.display = 'none'
+playerScissors.style.display = 'none'
+
 function botScissorsDisplay(){
-    botScissors.classList.remove('bot-choice')
+    botScissors.style.display = 'block'
 }
 function botRockDisplay(){
-    botRock.classList.remove('bot-choice')
+    botRock.style.display = 'block'
 }
 function botPaperDisplay(){
-    botPaper.classList.remove('bot-choice')
+    botPaper.style.display = 'block'
 }
 
 //highlight effect
@@ -91,33 +98,42 @@ function countScore(){
 }
 
 //play again
+gameOutcome.style.display = 'none'
 
 function outcome(){
-    gameOutcome.classList.remove('game-outcome-remove')
+    gameOutcome.style.display = 'block'
 }
 
 //hand signs play results
 
 let scissorsResult = () => {
-        triangleImg.classList.add('remove-hand-signs')
-        scissorsSign.classList.add('remove-hand-signs')
-        paperSign.classList.add('remove-hand-signs')
-        rockSign.classList.add('remove-hand-signs')
+        triangleImg.style.display = 'none'
+        scissorsSign.style.display = 'none'
+        paperSign.style.display = 'none'
+        rockSign.style.display = 'none'
     if(result === 1){
         outcomeHeader.innerText='DRAW'
         setTimeout(botScissorsDisplay, 3000)
+        botPaper.style.display ='none'
+        botRock.style.display = 'none'
         console.log('draw');
     }else if(result === 0){
         outcomeHeader.innerText='YOU WIN'
         setTimeout(botPaperDisplay, 3000)
+        botScissors.style.display ='none'
+        botRock.style.display = 'none'
         console.log('win')
     }else{
         outcomeHeader.innerText='YOU LOST'
         setTimeout(botRockDisplay, 3000)
+        botPaper.style.display ='none'
+        botScissors.style.display = 'none'
         console.log('lost')
     }
     playerScissors.classList.add('players-scissors')
+    playerScissors.style.display = 'block'
     botShadow.classList.add('bot-shadow-transform');
+    botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
     scws.classList.add('scissors-computer-won-shadow');
@@ -127,26 +143,35 @@ let scissorsResult = () => {
 scissorsSign.addEventListener('click', scissorsResult)
 
 let paperResult = () => {
-    triangleImg.classList.add('remove-hand-signs')
-    scissorsSign.classList.add('remove-hand-signs')
-    paperSign.classList.add('remove-hand-signs')
-    rockSign.classList.add('remove-hand-signs')
+    randomSign()
+    triangleImg.style.display = 'none'
+    scissorsSign.style.display = 'none'
+    paperSign.style.display = 'none'
+    rockSign.style.display = 'none'
 
-    if(result === 1){
+    if(result === 0){
         outcomeHeader.innerText='DRAW'
         setTimeout(botPaperDisplay, 3000)
+        botScissors.style.display ='none'
+        botRock.style.display = 'none'
         console.log('draw');
-    }else if(result === 0){
+    }else if(result === 1){
         outcomeHeader.innerText='YOU WIN'
         setTimeout(botRockDisplay, 3000)
+        botScissors.style.display ='none'
+        botPaper.style.display = 'none'
         console.log('win');
     }else{
         outcomeHeader.innerText='YOU LOST'
         setTimeout(botScissorsDisplay, 3000)
+        botPaper.style.display ='none'
+        botRock.style.display = 'none'
         console.log('lost');
     }
     playerPaper.classList.add('players-paper')
+    playerPaper.style.display = 'block'
     botShadow.classList.add('bot-shadow-transform')
+    botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
     scws.classList.add('scissors-computer-won-shadow');
@@ -156,26 +181,35 @@ let paperResult = () => {
 paperSign.addEventListener('click', paperResult)
 
 let rockResult = () => {
-    triangleImg.classList.add('remove-hand-signs')
-    scissorsSign.classList.add('remove-hand-signs')
-    paperSign.classList.add('remove-hand-signs')
-    rockSign.classList.add('remove-hand-signs')
+    randomSign()
+    triangleImg.style.display = 'none'
+    scissorsSign.style.display = 'none'
+    paperSign.style.display = 'none'
+    rockSign.style.display = 'none'
     if(result === 1){
         outcomeHeader.innerText='DRAW'
         setTimeout(botRockDisplay, 3000)
+        botScissors.style.display ='none'
+        botPaper.style.display = 'none'
         console.log('draw');
     }else if(result === 0){
         outcomeHeader.innerText='YOU WIN'
         setTimeout(botScissorsDisplay, 3000)
+        botPaper.style.display ='none'
+        botRock.style.display = 'none'
         console.log('win');
     }else{
         outcomeHeader.innerText='YOU LOST'
         setTimeout(botPaperDisplay, 3000)
+        botScissors.style.display ='none'
+        botRock.style.display = 'none'
         console.log('lost');
     }
     playerRock.classList.add('players-rock')
+    playerRock.style.display = 'block'
     botShadow.classList.add('bot-shadow-transform')
-    decision.classList.add('decisions-visible');
+    botShadow.style.display = 'block'
+    decision.classList.add('decisions-visible')
     rulesBtn.classList.add('rules-decisions');
     scws.classList.add('scissors-computer-won-shadow');
     setTimeout(outcome, 5000)
@@ -183,7 +217,9 @@ let rockResult = () => {
 }
 rockSign.addEventListener('click', rockResult)
 
-let reset = () => {
+playAgain.addEventListener('click', reset);
+
+function reset() {
    gameOutcome.style.display = 'none';
    playerPaper.style.display = 'none';
    playerRock.style.display = 'none';
@@ -192,10 +228,10 @@ let reset = () => {
    botRock.style.display = 'none';
    botScissors.style.display = 'none';
    botShadow.style.display ='none';
-   triangleImg.classList.remove('remove-hand-signs')
-   scissorsSign.classList.remove('remove-hand-signs')
-   paperSign.classList.remove('remove-hand-signs')
-   rockSign.classList.remove('remove-hand-signs')
+   triangleImg.style.display = 'block';
+   scissorsSign.style.display = 'block';
+   paperSign.style.display = 'block';
+   rockSign.style.display = 'block';
    console.log('hey')
 }
-playAgain.addEventListener('click', reset);
+
