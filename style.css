@@ -4,15 +4,13 @@
 }
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
-    display: grid;
+    display: flex;
+    margin-top: 1rem;
     justify-content: center;
     color: #fff;
     background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    overflow: none;
-}
-#container{
-    display: grid;
-    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
 }
 .header{
     display: flex;
@@ -20,17 +18,15 @@ body{
     border: 1px solid #fff;
     border-radius: .5rem;
     padding: .4rem .8rem;
-    margin-top: 1.8rem;
     align-items: center;
     font-size: .85rem;
-    
+    position: relative; 
 }
 .rps{
     margin-right: 12rem;
 }
 .score{
     text-align: center;
-    margin-left: 10rem;
     background-color: #fff;
     color: rgba(0, 0, 0, 0.7);
     padding: 1rem 2.5rem;
@@ -46,8 +42,8 @@ body{
 .decisions{
     display: flex;
     justify-content: space-around;
-    font-size: .2rem;
-    visibility: hidden;
+    margin-top: 1.5rem;
+    font-size: 1rem;
 }
 #first-p{
     margin-right: 6rem;
@@ -55,14 +51,11 @@ body{
 #second-p{
     margin-left: 6rem;
 }
-.decisions-visible{
-    font-size: 1rem;
-    margin-top: 2rem;
-    visibility: visible;
-}
+
 .hand-signs-div{
    position: relative;
    display: flex;
+   : center;
 }
 #rock{
     margin-top: 13rem;
@@ -114,7 +107,7 @@ body{
 #rules{
     position: absolute;
     margin-left: 40rem;
-    margin-top: 5rem;
+    margin-top: 7rem;
     font-size: .7rem;
     z-index: 3;
     letter-spacing: .2rem;
@@ -176,12 +169,12 @@ body{
     border: 15px solid hsl(349, 70%, 56%);
     box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
     border-radius: 50%;
-    padding: 1.7rem;
+    padding: 1.65rem;
     height: 3rem;
     cursor: pointer;
     background-color:#fff;
     position: absolute;
-    margin-top: 13rem;
+    margin-top: 13.2rem;
     margin-left: 14rem;
 }
 .players-choice-scissors{
@@ -193,14 +186,14 @@ body{
     cursor: pointer;
     background-color:#fff;
     position: absolute;
-    margin-top: 3rem;
+    margin-top: 3.1rem;
     margin-left: 21.8rem;
 }
 .players-choice-paper{
   border: 15px solid hsl(230, 89%, 65%);
   box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
   border-radius: 50%;
-  padding: 1.7rem;
+  padding: 1.65rem;
   height: 3rem;
   cursor: pointer;
   background-color:#fff;
@@ -213,14 +206,14 @@ body{
 
 .players-scissors{
     transition: transform 3s;
-    transform: translate(-300px, 30px) scale(1.2);
+    transform: translate(-350px, 30px) scale(1.2);
 }
 .players-paper{
-    transform: translate(-80px, 30px) scale(1.2);
+    transform: translate(-105px, 30px) scale(1.2);
     transition: all, 2s, ease-in;
 }
 .players-rock{
-    transform: translate(-200px, -130px) scale(1.2);
+    transform: translate(-220px, -130px) scale(1.2);
     transition: transform 2s;
 }
 
@@ -229,7 +222,7 @@ body{
 #bot-shadow{
     margin-top: 8rem;
     border-radius: 50%;
-    margin-left: 29.2rem;
+    margin-left: 28rem;
     z-index: -3;
     padding: .1rem;
     width: 1.8rem;
@@ -252,13 +245,13 @@ body{
     border: 18px solid hsl(40, 84%, 53%);
     box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
     border-radius: 50%;
-    padding: 1.9rem;
+    padding: 2rem;
     height: 3.3rem;
     cursor: pointer;
     background-color:#fff;
     position: absolute;
     margin-top: 4rem;
-    margin-left: 25rem;
+    margin-left: 24rem;
 }
 .bot-choice-paper{
     border: 18px solid hsl(230, 89%, 65%);
@@ -270,7 +263,7 @@ body{
     background-color:#fff;
     position: absolute;
     margin-top: 4rem;
-    margin-left: 25.4rem;
+    margin-left: 24rem;
 }
 .bot-choice-rock{
     border: 18px solid hsl(349, 70%, 56%);
@@ -282,7 +275,7 @@ body{
     background-color:#fff;
     position: absolute;
     margin-top: 4rem;
-    margin-left: 25rem;
+    margin-left: 24rem;
 }
 .game-outcome{
     position: absolute;
@@ -308,14 +301,12 @@ body{
 
 @media (min-width: 360px) and (max-width: 1024px){
     .header{
-        display: flex;
-        justify-content: space-between;
-        border: 1px solid #fff;
-        border-radius: .5rem;
-        margin-top: 2rem;
-        align-items: center;
-        font-size: .7rem;
-        position: relative;
+       justify-content: space-around;
+       width: 70%;
+       margin-top: 5rem;
+       align-self: center;
+       place-self: center;
+       justify-content: center;
     }
     #rules{
         position: absolute;
@@ -333,11 +324,12 @@ body{
     .score h1{
         font-size: 2rem;
     }
-   /* .game-outcome{
+    .game-outcome{
         position: absolute;
         left: 185px;
         bottom: 150px;
         text-align: center;
+        align-self: center;
     }
     .game-outcome p{
         font-size: .65rem;
@@ -347,5 +339,8 @@ body{
         margin-top: 1rem;
         background-color: #fff;
         cursor: pointer;
-    }*/
+    }
+    .hand-signs-div{
+        align-self: center;
+    }
 }

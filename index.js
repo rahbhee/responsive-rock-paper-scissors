@@ -55,6 +55,8 @@ playerPaper.style.display = 'none'
 playerRock.style.display = 'none'
 playerScissors.style.display = 'none'
 
+decision.style.display = 'none'
+
 function botScissorsDisplay(){
     botScissors.style.display = 'block'
 }
@@ -93,8 +95,17 @@ function outcome(){
     gameOutcome.style.display = 'block'
 }
 
-
-
+function drawScore(){
+    scoreNumber.textContent;
+}
+function winScore(){
+    scoreNumber.textContent++;
+}
+function lostScore(){
+    if(scoreNumber.textContent > 0 ){
+        scoreNumber.textContent--;
+    }
+}
 //hand signs play results
 
 let scissorsResult = () => {
@@ -103,30 +114,28 @@ let scissorsResult = () => {
         scissorsSign.style.display = 'none'
         paperSign.style.display = 'none'
         rockSign.style.display = 'none'
+        decision.style.display = 'flex'
     if(randomSign == 0){
         outcomeHeader.innerText='DRAW'
-        setTimeout(botScissorsDisplay, 3000)
+        setTimeout(botScissorsDisplay, 1000)
         botPaper.style.display ='none'
         botRock.style.display = 'none'
         console.log('draw');
-        scoreNumber.textContent;
+        setTimeout(drawScore, 3000)
     }else if(randomSign == 1){
        outcomeHeader.innerText='YOU WIN'
-        setTimeout(botPaperDisplay, 3000)
+        setTimeout(botPaperDisplay, 1000)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
         console.log('win')
-        scoreNumber.textContent++;
+        setTimeout(winScore, 3000)
     }else{
         outcomeHeader.innerText='YOU LOST'
-        setTimeout(botRockDisplay, 3000)
+        setTimeout(botRockDisplay, 1000)
         botPaper.style.display ='none'
         botScissors.style.display = 'none'
         console.log('lost')
-        if(scoreNumber.textContent >= 0 ){
-            scoreNumber.textContent--;
-        }
-        
+        setTimeout(lostScore, 3000)
     }
     playerScissors.classList.add('players-scissors')
     playerScissors.style.display = 'block'
@@ -134,7 +143,7 @@ let scissorsResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
-    setTimeout(outcome, 5000)
+    setTimeout(outcome, 3000)
     setTimeout(countScore, 6000)
     countScore()
 };
@@ -146,24 +155,27 @@ let paperResult = () => {
     scissorsSign.style.display = 'none'
     paperSign.style.display = 'none'
     rockSign.style.display = 'none'
+    decision.style.display = 'flex'
     if(randomSign === 0){
         outcomeHeader.innerText='DRAW'
-        setTimeout(botPaperDisplay, 3000)
+        setTimeout(botPaperDisplay, 1000)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
         console.log('draw');
+        setTimeout(drawScore, 3000)
     }else if(randomSign === 1){
         outcomeHeader.innerText='YOU WIN'
-        setTimeout(botRockDisplay, 3000)
+        setTimeout(botRockDisplay, 1000)
         botScissors.style.display ='none'
         botPaper.style.display = 'none'
         console.log('win');
+        setTimeout(winScore, 3000)
     }else{
         outcomeHeader.innerText='YOU LOST'
-        setTimeout(botScissorsDisplay, 3000)
+        setTimeout(botScissorsDisplay, 1000)
         botPaper.style.display ='none'
         botRock.style.display = 'none'
-        console.log('lost');
+        setTimeout(lostScore, 3000)
     }
     playerPaper.classList.add('players-paper')
     playerPaper.style.display = 'block'
@@ -171,7 +183,7 @@ let paperResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
-    setTimeout(outcome, 5000)
+    setTimeout(outcome, 3000)
     setTimeout(countScore, 6000)
 };
 paperSign.addEventListener('click', paperResult)
@@ -182,23 +194,27 @@ let rockResult = () => {
     scissorsSign.style.display = 'none'
     paperSign.style.display = 'none'
     rockSign.style.display = 'none'
+    decision.style.display = 'flex'
     if(randomSign === 0){
         outcomeHeader.innerText='DRAW'
-        setTimeout(botRockDisplay, 3000)
+        setTimeout(botRockDisplay, 1000)
         botScissors.style.display ='none'
         botPaper.style.display = 'none'
+        setTimeout(drawScore, 3000)
         console.log('draw');
     }else if(randomSign === 1){
         outcomeHeader.innerText='YOU WIN'
-        setTimeout(botScissorsDisplay, 3000)
+        setTimeout(botScissorsDisplay, 1000)
         botPaper.style.display ='none'
         botRock.style.display = 'none'
+        setTimeout(winScore, 3000)
         console.log('win');
     }else{
         outcomeHeader.innerText='YOU LOST'
-        setTimeout(botPaperDisplay, 3000)
+        setTimeout(botPaperDisplay, 1000)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
+        setTimeout(lostScore, 3000)
         console.log('lost');
     }
     playerRock.classList.add('players-rock')
@@ -207,7 +223,7 @@ let rockResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible')
     rulesBtn.classList.add('rules-decisions')
-    setTimeout(outcome, 5000)
+    setTimeout(outcome, 3000)
     setTimeout(countScore, 6000)
 }
 rockSign.addEventListener('click', rockResult)
@@ -225,6 +241,7 @@ function reset() {
    botRock.style.display = 'none';
    botScissors.style.display = 'none';
    botShadow.style.display ='none';
+   decision.style.display = 'none'
    triangleImg.style.display = 'block';
    scissorsSign.style.display = 'block';
    paperSign.style.display = 'block';
