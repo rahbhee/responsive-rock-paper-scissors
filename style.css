@@ -10,6 +10,10 @@ body{
     background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     overflow: none;
 }
+#container{
+    display: grid;
+    justify-content: center;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -19,7 +23,7 @@ body{
     margin-top: 1.8rem;
     align-items: center;
     font-size: .85rem;
-    position: relative;
+    
 }
 .rps{
     margin-right: 12rem;
@@ -208,26 +212,16 @@ body{
 /*players win*/
 
 .players-scissors{
-    border-radius: 50%;
-    height: 3rem;
-    cursor: pointer;
-    transition: all, 2s, ease-in;
+    transition: transform 3s;
     transform: translate(-300px, 30px) scale(1.2);
 }
 .players-paper{
-    border-radius: 50%;
-    height: 3rem;
-    cursor: pointer;
     transform: translate(-80px, 30px) scale(1.2);
     transition: all, 2s, ease-in;
-    display: block;
 }
 .players-rock{
-    border-radius: 50%;
-    height: 3rem;
-    cursor: pointer;
     transform: translate(-200px, -130px) scale(1.2);
-    transition: all, 2s, ease-in;
+    transition: transform 2s;
 }
 
 /*bot shadow*/
@@ -241,7 +235,6 @@ body{
     width: 1.8rem;
     height: 1.7rem;
     position: absolute;
-   
 }
 .bot-shadow-transform{
     transition: transform 2.5s;

@@ -31,6 +31,7 @@ const playAgain = document.getElementById('play-again');
 const scoreNumber = document.getElementById('score-number');
 let triangleImg = document.getElementById('triangle');
 
+
 //rules 
 
 rulesBtn.addEventListener('click', () => {
@@ -43,7 +44,6 @@ closeRulesBtn.addEventListener('click', () => {
 });
 
 
-let result = randomSign();
 // bot game play 
 
 botScissors.style.display = 'none'
@@ -84,18 +84,7 @@ function highlightEffect(){
 
 //score count 
 
-function countScore(){
-    var counter = 0;
-    scoreNumber.textContent = counter;
-    if(result == 0){
-        counter++;
-        scoreNumber.textContent = counter;
-    }else if(result == 1){
-        scoreNumber.textContent = counter;
-    }else{
-        counter--;
-    }
-}
+
 
 //play again
 gameOutcome.style.display = 'none'
@@ -104,31 +93,40 @@ function outcome(){
     gameOutcome.style.display = 'block'
 }
 
+
+
 //hand signs play results
 
 let scissorsResult = () => {
+    let randomSign = Math.floor(Math.random()*3)
         triangleImg.style.display = 'none'
         scissorsSign.style.display = 'none'
         paperSign.style.display = 'none'
         rockSign.style.display = 'none'
-    if(result === 1){
+    if(randomSign == 0){
         outcomeHeader.innerText='DRAW'
         setTimeout(botScissorsDisplay, 3000)
         botPaper.style.display ='none'
         botRock.style.display = 'none'
         console.log('draw');
-    }else if(result === 0){
-        outcomeHeader.innerText='YOU WIN'
+        scoreNumber.textContent;
+    }else if(randomSign == 1){
+       outcomeHeader.innerText='YOU WIN'
         setTimeout(botPaperDisplay, 3000)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
         console.log('win')
+        scoreNumber.textContent++;
     }else{
         outcomeHeader.innerText='YOU LOST'
         setTimeout(botRockDisplay, 3000)
         botPaper.style.display ='none'
         botScissors.style.display = 'none'
         console.log('lost')
+        if(scoreNumber.textContent >= 0 ){
+            scoreNumber.textContent--;
+        }
+        
     }
     playerScissors.classList.add('players-scissors')
     playerScissors.style.display = 'block'
@@ -136,26 +134,25 @@ let scissorsResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
-    scws.classList.add('scissors-computer-won-shadow');
     setTimeout(outcome, 5000)
     setTimeout(countScore, 6000)
+    countScore()
 };
 scissorsSign.addEventListener('click', scissorsResult)
 
 let paperResult = () => {
-    randomSign()
+    let randomSign = Math.floor(Math.random()*3)
     triangleImg.style.display = 'none'
     scissorsSign.style.display = 'none'
     paperSign.style.display = 'none'
     rockSign.style.display = 'none'
-
-    if(result === 0){
+    if(randomSign === 0){
         outcomeHeader.innerText='DRAW'
         setTimeout(botPaperDisplay, 3000)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
         console.log('draw');
-    }else if(result === 1){
+    }else if(randomSign === 1){
         outcomeHeader.innerText='YOU WIN'
         setTimeout(botRockDisplay, 3000)
         botScissors.style.display ='none'
@@ -174,25 +171,24 @@ let paperResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
-    scws.classList.add('scissors-computer-won-shadow');
     setTimeout(outcome, 5000)
     setTimeout(countScore, 6000)
 };
 paperSign.addEventListener('click', paperResult)
 
 let rockResult = () => {
-    randomSign()
+    let randomSign = Math.floor(Math.random()*3)
     triangleImg.style.display = 'none'
     scissorsSign.style.display = 'none'
     paperSign.style.display = 'none'
     rockSign.style.display = 'none'
-    if(result === 1){
+    if(randomSign === 0){
         outcomeHeader.innerText='DRAW'
         setTimeout(botRockDisplay, 3000)
         botScissors.style.display ='none'
         botPaper.style.display = 'none'
         console.log('draw');
-    }else if(result === 0){
+    }else if(randomSign === 1){
         outcomeHeader.innerText='YOU WIN'
         setTimeout(botScissorsDisplay, 3000)
         botPaper.style.display ='none'
@@ -210,12 +206,13 @@ let rockResult = () => {
     botShadow.classList.add('bot-shadow-transform')
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible')
-    rulesBtn.classList.add('rules-decisions');
-    scws.classList.add('scissors-computer-won-shadow');
+    rulesBtn.classList.add('rules-decisions')
     setTimeout(outcome, 5000)
     setTimeout(countScore, 6000)
 }
 rockSign.addEventListener('click', rockResult)
+
+
 
 playAgain.addEventListener('click', reset);
 
