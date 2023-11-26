@@ -93,6 +93,10 @@ body{
 .scissors, .paper{
     width: 3rem;
 }
+.hand-signs-div{
+    display: flex;
+    align-self: center;
+}
 .hand-signs-div div{
     background-color: #fff;
 }
@@ -209,7 +213,7 @@ body{
 }
 .players-paper{
     transform: translate(-105px, 30px) scale(1.2);
-    transition: all, 2s, ease-in;
+    transition: all 2s, ease-in;
 }
 .players-rock{
     transform: translate(-220px, -130px) scale(1.2);
@@ -277,9 +281,11 @@ body{
     margin-left: 24rem;
 }
 .game-outcome{
-    position: absolute;
-    margin-left: 0px;
-    bottom: 120px;
+    align-self: center;
+    justify-content: center;
+    margin: 10rem auto;
+    width: 10rem;
+    place-self: center;
     text-align: center;
     cursor: pointer;
 }
@@ -308,6 +314,7 @@ body{
        justify-content: center;
        font-size: .8rem;
        margin-bottom: 2rem;
+       margin-left: 6rem;
     }
     .decisions{
         display: flex;
@@ -315,10 +322,15 @@ body{
         position: absolute;
         top: -10rem;
         font-size: 1rem;
+        margin: auto;
     }
     #rules{
-        position: absolute;
-        margin-top: 15rem;
+
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-top: 30rem;
+        margin-left: 14.5rem;
         font-size: .7rem;
         letter-spacing: .2rem;
         padding: .5rem 1.5rem;
@@ -327,10 +339,11 @@ body{
     }
     .game-outcome{
         position: absolute;
-        left: 185px;
+        left: 150px;
         bottom: 150px;
         text-align: center;
         align-self: center;
+        font-size: 1.3rem;
     }
     .game-outcome p{
         font-size: .65rem;
@@ -345,5 +358,52 @@ body{
         align-self: center;
 
     }
-    
+    .players-scissors{
+        transition: transform 3s;
+        transform: translate(-260px, 30px) scale(1.2);
+    }
+    .players-paper{
+        transform: translate(-20px, 30px) scale(1.2);
+        transition: all 2s, ease-in;
+    }
+    .players-rock{
+        transform: translate(-140px, -130px) scale(1.2);
+        transition: transform 2s;
+    }
+    .bot-choice-scissors{
+        border: 18px solid hsl(40, 84%, 53%);
+        box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
+        border-radius: 50%;
+        padding: 2rem;
+        height: 3.3rem;
+        cursor: pointer;
+        background-color:#fff;
+        position: absolute;
+        margin-top: 4rem;
+        margin-left: 21rem;
+    }
+    .bot-choice-paper{
+        border: 18px solid hsl(230, 89%, 65%);
+        box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
+        border-radius: 50%;
+        padding: 2rem;
+        height: 3.3rem;
+        cursor: pointer;
+        background-color:#fff;
+        position: absolute;
+        margin-top: 4rem;
+        margin-left: 20.5rem;
+    }
+    .bot-choice-rock{
+        border: 18px solid hsl(349, 70%, 56%);
+        box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
+        border-radius: 50%;
+        padding: 2.24rem;
+        height: 3.3rem;
+        cursor: pointer;
+        background-color:#fff;
+        position: absolute;
+        margin-top: 4.3rem;
+        margin-left: 21rem;
+    }
 }
