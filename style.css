@@ -307,14 +307,15 @@ body{
 @media (min-width: 360px) and (max-width: 1024px){
     .header{
        justify-content: space-around;
-       width: 70%;
+       width: 68%;
        margin-top: 3rem;
        align-self: center;
        place-self: center;
        justify-content: center;
        font-size: .8rem;
        margin-bottom: 2rem;
-       margin-left: 6rem;
+       margin-left: 5rem;
+       font-size: .7rem;
     }
     .decisions{
         display: flex;
@@ -340,10 +341,10 @@ body{
     .game-outcome{
         position: absolute;
         left: 150px;
-        bottom: 150px;
+        bottom: 140px;
         text-align: center;
         align-self: center;
-        font-size: 1.3rem;
+        font-size: 1.15rem;
     }
     .game-outcome p{
         font-size: .65rem;
@@ -356,18 +357,19 @@ body{
     }
     .hand-signs-div{
         align-self: center;
-
+        place-self: center;
+        margin-right: 5rem;
     }
     .players-scissors{
         transition: transform 3s;
-        transform: translate(-260px, 30px) scale(1.2);
+        transform: translate(-260px, 30.5px) scale(1.2);
     }
     .players-paper{
         transform: translate(-20px, 30px) scale(1.2);
         transition: all 2s, ease-in;
     }
     .players-rock{
-        transform: translate(-140px, -130px) scale(1.2);
+        transform: translate(-130px, -130px) scale(1.2);
         transition: transform 2s;
     }
     .bot-choice-scissors{
@@ -380,7 +382,7 @@ body{
         background-color:#fff;
         position: absolute;
         margin-top: 4rem;
-        margin-left: 21rem;
+        margin-left: 20.5rem;
     }
     .bot-choice-paper{
         border: 18px solid hsl(230, 89%, 65%);
@@ -398,12 +400,12 @@ body{
         border: 18px solid hsl(349, 70%, 56%);
         box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
         border-radius: 50%;
-        padding: 2.24rem;
-        height: 3.3rem;
+        padding: 2.1rem;
+        height: 3.4rem;
         cursor: pointer;
         background-color:#fff;
         position: absolute;
-        margin-top: 4.3rem;
-        margin-left: 21rem;
+        margin-top: 4rem;
+        margin-left: 18rem;
     }
 }
