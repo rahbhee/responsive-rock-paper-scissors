@@ -307,17 +307,18 @@ body{
 @media (min-width: 360px) and (max-width: 1024px){
     body{
         max-height: 100vh;
+        max-width: 400px;
     }
     .header{
        justify-content: space-around;
-       width: 55.5%;
+       width: 61%;
        margin-top: 3rem;
        align-self: center;
        place-self: center;
        justify-content: center;
        font-size: .7rem;
        margin-bottom: 2rem;
-       margin-left: 7rem;
+       margin-left: 5.5rem;
        font-size: .65rem;
     }
     .decisions{
@@ -330,6 +331,20 @@ body{
     }
     .score{
         padding: .6rem 1.5rem;
+    }
+    .rules{
+        display: grid;
+        justify-content: center;
+        height: 25rem;
+        width: 30rem;
+        z-index: 1;
+        margin-left: 2.5rem;
+        margin-bottom: -25rem;
+        background-color: #fff;
+        color: black;
+        transform: scale(0.1);
+        visibility: hidden;
+        border-radius: 1rem;
     }
     #rules{
         display: flex;
@@ -345,8 +360,8 @@ body{
     }
     .game-outcome{
         position: absolute;
-        left: 150px;
-        bottom: 170px;
+        left: 120px;
+        bottom: 90px;
         text-align: center;
         align-self: center;
         font-size: 1.15rem;
@@ -381,19 +396,19 @@ body{
         border: 18px solid hsl(40, 84%, 53%);
         box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
         border-radius: 50%;
-        padding: 2rem;
+        padding: 1.5rem;
         height: 3.3rem;
         cursor: pointer;
         background-color:#fff;
         position: absolute;
         margin-top: 4rem;
-        margin-left: 20.5rem;
+        margin-left: 19rem;
     }
     .bot-choice-paper{
         border: 18px solid hsl(230, 89%, 65%);
         box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
         border-radius: 50%;
-        padding: 2rem;
+        padding: 1.55rem;
         height: 3.3rem;
         cursor: pointer;
         background-color:#fff;
@@ -405,12 +420,62 @@ body{
         border: 18px solid hsl(349, 70%, 56%);
         box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
         border-radius: 50%;
-        padding: 2.1rem;
+        padding: 1.6rem;
         height: 3.4rem;
         cursor: pointer;
         background-color:#fff;
         position: absolute;
         margin-top: 4rem;
         margin-left: 18rem;
+    }
+    #bot-shadow{
+        margin-top: 8rem;
+        border-radius: 50%;
+        margin-left: 22.5rem;
+        z-index: -3;
+        width: 1.8rem;
+        height: 1.7rem;
+        position: absolute;
+    }
+    .bot-shadow-transform{
+        transition: transform 2.5s;
+        transform: scale(4.5);
+        background-color: rgba(24,35,65,255);
+    }
+    .players-choice-rock{
+        border: 15px solid hsl(349, 70%, 56%);
+        box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
+        border-radius: 50%;
+        padding: 1.2rem;
+        height: 3rem;
+        cursor: pointer;
+        background-color:#fff;
+        position: absolute;
+        margin-top: 13rem;
+        margin-left: 14rem;
+    }
+    .players-choice-scissors{
+        border: 15px solid hsl(40, 84%, 53%);
+        box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
+        border-radius: 50%;
+        padding: 1.2rem;
+        height: 3rem;
+        cursor: pointer;
+        background-color:#fff;
+        position: absolute;
+        margin-top: 3rem;
+        margin-left: 21.8rem;
+    }
+    .players-choice-paper{
+      border: 15px solid hsl(230, 89%, 65%);
+      box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
+      border-radius: 50%;
+      padding: 1.2rem;
+      height: 3rem;
+      cursor: pointer;
+      background-color:#fff;
+      position: absolute;
+      margin-top: 3.15rem;
+      margin-left: 6.5rem;
     }
 }
