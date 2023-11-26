@@ -143,6 +143,7 @@ let scissorsResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
+    rulesBtn.style.display = 'none'
     setTimeout(outcome, 3000)
     setTimeout(countScore, 6000)
     countScore()
@@ -183,6 +184,7 @@ let paperResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible');
     rulesBtn.classList.add('rules-decisions');
+    rulesBtn.style.display = 'none'
     setTimeout(outcome, 3000)
     setTimeout(countScore, 6000)
 };
@@ -223,6 +225,7 @@ let rockResult = () => {
     botShadow.style.display = 'block'
     decision.classList.add('decisions-visible')
     rulesBtn.classList.add('rules-decisions')
+    rulesBtn.style.display = 'none'
     setTimeout(outcome, 3000)
     setTimeout(countScore, 6000)
 }
@@ -246,6 +249,7 @@ function reset() {
    scissorsSign.style.display = 'block';
    paperSign.style.display = 'block';
    rockSign.style.display = 'block';
+   rulesBtn.style.display = 'block'
    console.log('hey')
 }
 
