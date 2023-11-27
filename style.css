@@ -307,30 +307,20 @@ body{
 @media (min-width: 360px) and (max-width: 1024px){
     body{
         max-height: 100vh;
-        max-width: 400px;
+        max-width: 380px;
+        margin: auto;
     }
     .header{
        justify-content: space-around;
-       width: 61%;
+       width: 55%;
        margin-top: 3rem;
        align-self: center;
        place-self: center;
        justify-content: center;
        font-size: .7rem;
        margin-bottom: 2rem;
-       margin-left: 5.5rem;
+       margin-left: 7rem;
        font-size: .65rem;
-    }
-    .decisions{
-        display: flex;
-        justify-content: space-around;
-        position: absolute;
-        top: -10rem;
-        font-size: 1rem;
-        margin: auto;
-    }
-    .score{
-        padding: .6rem 1.5rem;
     }
     .rules{
         display: grid;
@@ -343,14 +333,36 @@ body{
         background-color: #fff;
         color: black;
         transform: scale(0.1);
-        visibility: hidden;
         border-radius: 1rem;
     }
+    .open-rules{
+        transform: scale(.8);
+        transition: transform 0.3s ease-in-out;
+        visibility: visible;
+        z-index: 1;
+        margin-top: 2rem;
+        position: relative;
+    }
+    .decisions{
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        top: -10rem;
+        font-size: 1rem;
+        margin: auto;
+    }
+    .score{
+        padding: .3rem 1rem;
+    }
+    #triangle{
+      margin-right: 5rem;
+    }
+    
     #rules{
         display: flex;
         align-self: center;
         justify-content: center;
-        margin-top: 20rem;
+        margin-top: 15rem;
         margin-left: 14.5rem;
         font-size: .7rem;
         letter-spacing: .2rem;
@@ -414,7 +426,7 @@ body{
         background-color:#fff;
         position: absolute;
         margin-top: 4rem;
-        margin-left: 18rem;
+        margin-left: 19rem;
     }
     .bot-choice-rock{
         border: 18px solid hsl(349, 70%, 56%);
@@ -470,12 +482,46 @@ body{
       border: 15px solid hsl(230, 89%, 65%);
       box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
       border-radius: 50%;
-      padding: 1.2rem;
+      padding: 1.3rem;
       height: 3rem;
       cursor: pointer;
       background-color:#fff;
       position: absolute;
-      margin-top: 3.15rem;
-      margin-left: 6.5rem;
+      margin-top: 3rem;
+      margin-left: 7.5rem;
+    }
+    #rock{
+        margin-top: 13rem;
+        margin-left: 13rem;
+        position: absolute;
+        border: 15px solid hsl(349, 70%, 56%);
+        box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(349, 70%, 50%);
+        border-radius: 50%;
+        padding: 1.5rem;
+        height: 3rem;
+        cursor: pointer;
+        display: flex;
+    }
+    #scissors{
+        margin-top: 3rem;
+        margin-left: 6rem;
+        border: 15px solid hsl(40, 84%, 53%);
+        box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
+        border-radius: 50%;
+        padding: 1.5rem;
+        height: 3rem;
+        cursor: pointer;
+        display: flex;
+    }
+    #paper{
+      margin-top: 3rem;
+      margin-left: 6rem;
+      border: 15px solid hsl(230, 89%, 65%);
+      box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
+      border-radius: 50%;
+      padding: 1.5rem;
+      height: 3rem;
+      cursor: pointer;
+      display: flex;
     }
 }
