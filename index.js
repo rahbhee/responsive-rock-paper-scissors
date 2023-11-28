@@ -30,7 +30,8 @@ const outcomeHeader = document.getElementById('outcomeh1');
 const playAgain = document.getElementById('play-again');
 const scoreNumber = document.getElementById('score-number');
 let triangleImg = document.getElementById('triangle');
-
+const playerHighlight = document.querySelector('.player-Highlight-Div');
+const botHighlight = document.querySelector('.bot-Highlight-Div');
 
 //rules 
 
@@ -57,38 +58,20 @@ playerScissors.style.display = 'none'
 
 decision.style.display = 'none'
 
-function botScissorsDisplay(){
-    botScissors.style.display = 'block'
-}
-function botRockDisplay(){
-    botRock.style.display = 'block'
-}
-function botPaperDisplay(){
-    botPaper.style.display = 'block'
-}
-
 //highlight effect
 
-function highlightEffect(){
-    let c1 = document.createElement('div');
-    let c2 = document.createElement('div');
-    let c3 = document.createElement('div');
-    handSigns.append(c1);
-    handSigns.append(c2);
-    handSigns.append(c3);
-    c1.classList.add('circle');
-    c1.classList.add('circle--1');
-    c2.classList.add('circle');
-    c2.classList.add('circle--2');
-    c3.classList.add('circle');
-    c3.classList.add('circle--3');
+playerHighlight.style.display = 'none'
+botHighlight.style.display ='none'
+
+function playerHighlightDisplay(){
+    playerHighlight.style.display = 'block'
 }
 
-//score count 
-
-
-
+function botHighlightDisplay(){
+    botHighlight.style.display = 'block'
+}
 //play again
+
 gameOutcome.style.display = 'none'
 
 function outcome(){
@@ -106,9 +89,21 @@ function lostScore(){
         scoreNumber.textContent--;
     }
 }
+
+function botScissorsDisplay(){
+    botScissors.style.display = 'block'
+}
+function botRockDisplay(){
+    botRock.style.display = 'block'
+}
+function botPaperDisplay(){
+    botPaper.style.display = 'block'
+}
+
 //hand signs play results
 
 let scissorsResult = () => {
+    
     let randomSign = Math.floor(Math.random()*3)
         triangleImg.style.display = 'none'
         scissorsSign.style.display = 'none'
@@ -120,21 +115,20 @@ let scissorsResult = () => {
         setTimeout(botScissorsDisplay, 1000)
         botPaper.style.display ='none'
         botRock.style.display = 'none'
-        console.log('draw');
         setTimeout(drawScore, 3000)
     }else if(randomSign == 1){
        outcomeHeader.innerText='YOU WIN'
         setTimeout(botPaperDisplay, 1000)
+        setTimeout(playerHighlightDisplay, 1500)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
-        console.log('win')
         setTimeout(winScore, 3000)
     }else{
         outcomeHeader.innerText='YOU LOST'
         setTimeout(botRockDisplay, 1000)
+        setTimeout(botHighlightDisplay, 1500)
         botPaper.style.display ='none'
         botScissors.style.display = 'none'
-        console.log('lost')
         setTimeout(lostScore, 3000)
     }
     playerScissors.classList.add('players-scissors')
@@ -162,18 +156,18 @@ let paperResult = () => {
         setTimeout(botPaperDisplay, 1000)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
-        console.log('draw');
         setTimeout(drawScore, 3000)
     }else if(randomSign === 1){
         outcomeHeader.innerText='YOU WIN'
         setTimeout(botRockDisplay, 1000)
+        setTimeout(playerHighlightDisplay, 1200)
         botScissors.style.display ='none'
         botPaper.style.display = 'none'
-        console.log('win');
         setTimeout(winScore, 3000)
     }else{
         outcomeHeader.innerText='YOU LOST'
         setTimeout(botScissorsDisplay, 1000)
+        setTimeout(botHighlightDisplay, 1200)
         botPaper.style.display ='none'
         botRock.style.display = 'none'
         setTimeout(lostScore, 3000)
@@ -207,6 +201,7 @@ let rockResult = () => {
     }else if(randomSign === 1){
         outcomeHeader.innerText='YOU WIN'
         setTimeout(botScissorsDisplay, 1000)
+        setTimeout(botHighlightDisplay, 1200)
         botPaper.style.display ='none'
         botRock.style.display = 'none'
         setTimeout(winScore, 3000)
@@ -231,8 +226,6 @@ let rockResult = () => {
 }
 rockSign.addEventListener('click', rockResult)
 
-
-
 playAgain.addEventListener('click', reset);
 
 function reset() {
@@ -250,6 +243,8 @@ function reset() {
    paperSign.style.display = 'block';
    rockSign.style.display = 'block';
    rulesBtn.style.display = 'block'
+   playerHighlight.style.display ='none'
+   botHighlight.style.display = 'none'
    console.log('hey')
 }
 

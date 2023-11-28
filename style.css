@@ -55,6 +55,7 @@ body{
 .hand-signs-div{
    position: relative;
    display: flex;
+
 }
 #rock{
     margin-top: 13rem;
@@ -95,7 +96,7 @@ body{
 }
 .hand-signs-div{
     display: flex;
-    align-self: center;
+    align-content: center;
 }
 .hand-signs-div div{
     background-color: #fff;
@@ -162,7 +163,9 @@ body{
     margin-top: 2rem;
     position: relative;
 }
-
+#triangle{
+    margin-right: 5rem;
+}
 /*players-choice*/
 
 .players-choice{
@@ -280,6 +283,9 @@ body{
     margin-top: 4rem;
     margin-left: 24rem;
 }
+
+/**/
+
 .game-outcome{
     align-self: center;
     justify-content: center;
@@ -302,8 +308,60 @@ body{
     background-color: #fff;
     cursor: pointer;
 }
+#triangle{
+    margin-left: rem;
+}
 
-
+/*highlight for player*/
+.circle{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.06);
+    opacity: 1;
+    z-index: -1;
+}
+.circle--1-player{
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    top: 13.46rem;
+    left: 18rem;
+}
+.circle--2-player{
+    border-radius: 50%;
+    width: 17rem;
+    height: 17rem;
+    top: 11rem;
+    left: 15.5rem;
+}
+.circle--3-player{
+    border-radius: 50%;
+    width: 21rem;
+    height: 21rem;
+    top: 9rem;
+    left: 13.5rem;
+}
+/*highlight for bot*/
+.circle--1-bot{
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    top: 13.2rem;
+    left: 43rem;
+}
+.circle--2-bot{
+    border-radius: 50%;
+    width: 17rem;
+    height: 17rem;
+    top: 11rem;
+    left: 40.5rem;
+}
+.circle--3-bot{
+    border-radius: 50%;
+    width: 21rem;
+    height: 21rem;
+    top: 9rem;
+    left: 38.5rem;
+}
 @media (min-width: 360px) and (max-width: 1024px){
     body{
         max-height: 100vh;
@@ -312,7 +370,7 @@ body{
     }
     .header{
        justify-content: space-around;
-       width: 55%;
+       width: 60%;
        margin-top: 3rem;
        align-self: center;
        place-self: center;
@@ -355,7 +413,7 @@ body{
         padding: .3rem 1rem;
     }
     #triangle{
-      margin-right: 5rem;
+      margin-right: 5rem !important;
     }
     
     #rules{
@@ -363,7 +421,7 @@ body{
         align-self: center;
         justify-content: center;
         margin-top: 15rem;
-        margin-left: 14.5rem;
+        margin-left: 14rem;
         font-size: .7rem;
         letter-spacing: .2rem;
         padding: .5rem 1.5rem;
@@ -470,7 +528,7 @@ body{
         border: 15px solid hsl(40, 84%, 53%);
         box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px hsl(39, 89%, 43%);
         border-radius: 50%;
-        padding: 1.2rem;
+        padding: 1.15rem;
         height: 3rem;
         cursor: pointer;
         background-color:#fff;
@@ -482,7 +540,7 @@ body{
       border: 15px solid hsl(230, 89%, 65%);
       box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px  hsl(230, 89%, 58%);
       border-radius: 50%;
-      padding: 1.3rem;
+      padding: 1.2rem;
       height: 3rem;
       cursor: pointer;
       background-color:#fff;
@@ -523,5 +581,12 @@ body{
       height: 3rem;
       cursor: pointer;
       display: flex;
+    }
+    .circle{
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.06);
+        opacity: 1;
+        z-index: -1;
+        display: none;
     }
 }
