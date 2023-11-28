@@ -209,6 +209,7 @@ let rockResult = () => {
     }else{
         outcomeHeader.innerText='YOU LOST'
         setTimeout(botPaperDisplay, 1000)
+        setTimeout(botHighlightDisplay, 1200)
         botScissors.style.display ='none'
         botRock.style.display = 'none'
         setTimeout(lostScore, 3000)
