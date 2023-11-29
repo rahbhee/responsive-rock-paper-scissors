@@ -377,7 +377,7 @@ body{
        justify-content: center;
        font-size: .7rem;
        margin-bottom: 2rem;
-       margin-left: 4.5rem;
+       margin-left: 6.3rem;
        font-size: .65rem;
     }
     .rules{
@@ -582,5 +582,7 @@ body{
       cursor: pointer;
       display: flex;
     }
-    
+    .circle{
+        display: none;
+    }
 }
