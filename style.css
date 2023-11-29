@@ -207,6 +207,7 @@ body{
   position: absolute;
   margin-top: 3rem;
   margin-left: 6.5rem;
+
 }
 
 /*players win*/
@@ -309,9 +310,7 @@ body{
     background-color: #fff;
     cursor: pointer;
 }
-#triangle{
-    margin-left: rem;
-}
+
 
 /*highlight for player*/
 .circle{
@@ -583,53 +582,5 @@ body{
       cursor: pointer;
       display: flex;
     }
-    .circle{
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.06);
-    opacity: 1;
-    z-index: -1;
-}
-.circle--1-player{
-    border-radius: 50%;
-    width: 12rem;
-    height: 12rem;
-    top: 13.46rem;
-    left: 18rem;
-}
-.circle--2-player{
-    border-radius: 50%;
-    width: 17rem;
-    height: 17rem;
-    top: 11rem;
-    left: 15.5rem;
-}
-.circle--3-player{
-    border-radius: 50%;
-    width: 21rem;
-    height: 21rem;
-    top: 9rem;
-    left: 13.5rem;
-}
-/*highlight for bot*/
-.circle--1-bot{
-    border-radius: 50%;
-    width: 12rem;
-    height: 12rem;
-    top: 13.2rem;
-    left: 43rem;
-}
-.circle--2-bot{
-    border-radius: 50%;
-    width: 17rem;
-    height: 17rem;
-    top: 11rem;
-    left: 40.5rem;
-}
-.circle--3-bot{
-    border-radius: 50%;
-    width: 21rem;
-    height: 21rem;
-    top: 9rem;
-    left: 38.5rem;
-}
+    
 }
