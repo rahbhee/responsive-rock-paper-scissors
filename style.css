@@ -55,7 +55,7 @@ body{
 .hand-signs-div{
    position: relative;
    display: flex;
-
+   margin-right: 3rem;
 }
 #rock{
     margin-top: 13rem;
@@ -97,6 +97,7 @@ body{
 .hand-signs-div{
     display: flex;
     align-content: center;
+    margin-right: 5rem;
 }
 .hand-signs-div div{
     background-color: #fff;
@@ -430,7 +431,7 @@ body{
     }
     .game-outcome{
         position: absolute;
-        left: 120px;
+        left: 130px;
         bottom: 90px;
         text-align: center;
         align-self: center;
@@ -583,52 +584,52 @@ body{
       display: flex;
     }
     .circle{
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.06);
-        opacity: 1;
-        z-index: -1;
-    }
-    .circle--1-player{
-        border-radius: 50%;
-        width: 10.5rem;
-        height: 10.5rem;
-        top: 13.3rem;
-        left: 15rem;
-    }
-    .circle--2-player{
-        border-radius: 50%;
-        width: 12rem;
-        height: 12rem;
-        top: 12.7rem;
-        left: 14.3rem;
-    }
-    .circle--3-player{
-        border-radius: 50%;
-        width: 15rem;
-        height: 15rem;
-        top: 11.2rem;
-        left: 12.65rem;
-    }
-    /*highlight for bot*/
-    .circle--1-bot{
-        border-radius: 50%;
-        width: 12rem;
-        height: 12rem;
-        top: 13.2rem;
-        left: 43rem;
-    }
-    .circle--2-bot{
-        border-radius: 50%;
-        width: 17rem;
-        height: 17rem;
-        top: 11rem;
-        left: 40.5rem;
-    }
-    .circle--3-bot{
-        border-radius: 50%;
-        width: 21rem;
-        height: 21rem;
-        top: 9rem;
-        left: 38.5rem;
-    }
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.06);
+    opacity: 1;
+    z-index: -1;
+}
+.circle--1-player{
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    top: 13.46rem;
+    left: 18rem;
+}
+.circle--2-player{
+    border-radius: 50%;
+    width: 17rem;
+    height: 17rem;
+    top: 11rem;
+    left: 15.5rem;
+}
+.circle--3-player{
+    border-radius: 50%;
+    width: 21rem;
+    height: 21rem;
+    top: 9rem;
+    left: 13.5rem;
+}
+/*highlight for bot*/
+.circle--1-bot{
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    top: 13.2rem;
+    left: 43rem;
+}
+.circle--2-bot{
+    border-radius: 50%;
+    width: 17rem;
+    height: 17rem;
+    top: 11rem;
+    left: 40.5rem;
+}
+.circle--3-bot{
+    border-radius: 50%;
+    width: 21rem;
+    height: 21rem;
+    top: 9rem;
+    left: 38.5rem;
+}
 }
